@@ -1,0 +1,36 @@
+# Xiaomi configuration options
+
+config MACH_XIAOMI
+	bool "Xiaomi device"
+	depends on ARCH_QCOM
+	help
+	  Support for Xiaomi products
+
+config MACH_XIAOMI_SDM660
+	bool "Xiaomi SDM660"
+	depends on ARCH_QCOM
+	select MACH_XIAOMI
+	help
+	  Support for Xiaomi SDM660 devices
+
+menu "Xiaomi board selection"
+
+	config MACH_MI
+		bool "Mi board"
+		select MACH_XIAOMI_SDM660
+		help
+		  Support for Mi boards
+
+	config MACH_LONGCHEER
+		bool "Longcheer board"
+		select MACH_XIAOMI_SDM660
+		help
+		  Support for Longcheer boards
+
+	config MACH_XIAOMI_WAYNE
+		bool "Xiaomi wayne board"
+		select MACH_LONGCHEER
+		help
+		  Support for Xiaomi MI 6X variant
+
+endmenu
