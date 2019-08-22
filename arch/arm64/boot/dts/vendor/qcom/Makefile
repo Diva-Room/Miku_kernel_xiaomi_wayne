@@ -243,6 +243,9 @@ dtb-$(CONFIG_ARCH_SCUBA) += scuba-rumi.dtb \
 	scuba-iot-idp-usbc-2gb.dtb
 endif
 
+ifeq ($(CONFIG_MACH_XIAOMI_WAYNE),y)
+dtb-$(CONFIG_MACH_XIAOMI_WAYNE) := wayne.dtb
+else
 ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
         dtbo-$(CONFIG_ARCH_KHAJE) += \
 		khaje-idp-overlay.dtbo \
@@ -341,6 +344,7 @@ sdm660-internal-codec-cdp.dtb \
         sdm660-pm660a-headset-jacktype-no-rcm.dtb \
         sdm660-usbc-audio-mtp.dtb \
         sdm660-usbc-audio-rcm.dtb
+endif
 endif
 
 ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
