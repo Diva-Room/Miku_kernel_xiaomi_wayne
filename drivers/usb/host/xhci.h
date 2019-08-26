@@ -451,7 +451,7 @@ struct xhci_op_regs {
  * e.g. not program values > '4' if BLC = '1' and a HIRD device is attached,
  * or not program values < '4' if BLC = '0' and a BESL device is attached.
  */
-#define XHCI_DEFAULT_BESL	4
+#define XHCI_DEFAULT_BESL	0
 
 /**
  * struct xhci_intr_reg - Interrupt Register Set
