@@ -736,6 +736,11 @@ static int smb2_usb_get_prop(struct power_supply *psy,
 		val->intval = get_client_vote(chg->usb_icl_votable,
 					      USB_PSY_VOTER);
 		break;
+#ifdef CONFIG_MACH_XIAOMI_SDM660
+	case POWER_SUPPLY_PROP_RERUN_APSD:
+		val->intval = chg->float_rerun_apsd;
+		break;
+#endif
 #ifdef CONFIG_MACH_MI
 	case POWER_SUPPLY_PROP_TYPE_RECHECK:
 		rc = smblib_get_prop_type_recheck(chg, val);
