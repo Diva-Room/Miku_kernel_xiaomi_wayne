@@ -11,4 +11,8 @@ obj-$(CONFIG_MSM_NPU) += npu/
 obj-$(CONFIG_MSM_GLOBAL_SYNX) += synx/
 obj-$(CONFIG_TSPP) += broadcast/
 obj-$(CONFIG_DVB_MPQ) += dvb/
+ifneq ($(CONFIG_MSMB_CAMERA_OSS),y)
 obj-$(CONFIG_MSMB_CAMERA) += camera_v2/
+else
+obj-$(CONFIG_MSMB_CAMERA) += camera_v2-oss/
+endif
