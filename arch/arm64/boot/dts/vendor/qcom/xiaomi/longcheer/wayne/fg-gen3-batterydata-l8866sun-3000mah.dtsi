@@ -19,7 +19,7 @@ qcom,l8866sun_3000mah {
 	qcom,nom-batt-capacity-mah = <3000>;
 	qcom,batt-id-kohm = <68>;
 	qcom,battery-beta = <3380>;
-	qcom,battery-full-design = <3010>;
+	qcom,battery-full-design = <3010000>;
 	qcom,battery-type = "3797504_lc_d2s_sunwoda_3000mah_fg_averaged_masterslave_jan11th2019";
 	qcom,checksum = <0x011F>;
 	qcom,gui-version = "PM660GUI - 0.0.0.45";

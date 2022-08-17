@@ -19,7 +19,7 @@ qcom,l8866default_3000mah {
 	qcom,nom-batt-capacity-mah = <3000>;
 	qcom,batt-id-kohm = <666>;
 	qcom,battery-beta = <3435>;
-	qcom,battery-full-design = <3010>;
+	qcom,battery-full-design = <3010000>;
 	qcom,battery-type = "unknown-default";
 	qcom,checksum = <0xEE03>;
 	qcom,gui-version = "PM660GUI - 0.0.0.45";
