@@ -71,13 +71,6 @@
 	qcom,fg-jeita-hyst-temp = <0>;
 };
 
-/* common diff with msm-pm660l.dtsi */
-&soc {
-	restart@10ac000 {
-		qcom,force-warm-reboot;
-	};
-};
-
 &pm660l_wled {
 	/delete-property/ qcom,auto-calibration;
 	qcom,fs-current-limit = <20000>;
