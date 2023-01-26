@@ -300,17 +300,6 @@
 		compatible = "simple-bus";
 	};
 
-	firmware: firmware {
-		android {
-			compatible = "android,firmware";
-
-			vbmeta {
-				 compatible = "android,vbmeta";
-				  parts = "vbmeta,boot,system,vendor,dtbo";
-			};
-		};
-	};
-
 	reserved-memory {
 		#address-cells = <2>;
 		#size-cells = <2>;
