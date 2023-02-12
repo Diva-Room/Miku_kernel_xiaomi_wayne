@@ -301,8 +301,6 @@ static int msm_csid_reset(struct csid_device *csid_dev)
 			csid_dev->ctrl_reg->csid_reg.csid_rst_stb_all,
 			MSM_CAMERA_TZ_IO_REGION_CSIDCORE0 + csid_dev->pdev->id);
 	} else {
-		irq_bitshift =
-		csid_dev->ctrl_reg->csid_reg.csid_rst_done_irq_bitshift;
 		msm_camera_vio_w(csid_dev->ctrl_reg->csid_reg.csid_rst_stb_all,
 			csid_dev->base,
 			csid_dev->ctrl_reg->csid_reg.csid_rst_cmd_addr,
@@ -319,6 +317,7 @@ static int msm_csid_reset(struct csid_device *csid_dev)
 			csid_dev->pdev->id);
 		pr_err_ratelimited("%s CSID%d_IRQ_STATUS_ADDR = 0x%x\n",
 			__func__, csid_dev->pdev->id, irq);
+		irq_bitshift = csid_dev->ctrl_reg->csid_reg.csid_rst_done_irq_bitshift;
 		if (irq & (0x1 << irq_bitshift)) {
 			rc = 1;
 			CDBG("%s succeeded", __func__);
