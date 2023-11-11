@@ -3019,23 +3019,23 @@ int smblib_get_prop_die_health(struct smb_charger *chg,
 	return 0;
 }
 
-#define SDP_CURRENT_UA			3300000
-#define CDP_CURRENT_UA			3300000
+#define SDP_CURRENT_UA			1000000
+#define CDP_CURRENT_UA			1800000
 #ifdef CONFIG_MACH_LONGCHEER
-#define DCP_CURRENT_UA			3300000
-#define HVDCP2_CURRENT_UA		3300000
+#define DCP_CURRENT_UA			2500000
+#define HVDCP2_CURRENT_UA		2500000
 #if defined(CONFIG_MACH_XIAOMI_WHYRED) || defined(CONFIG_MACH_XIAOMI_TULIP)
-#define HVDCP_CURRENT_UA		3300000
+#define HVDCP_CURRENT_UA		2200000
 #else
-#define HVDCP_CURRENT_UA		3300000
+#define HVDCP_CURRENT_UA		3000000
 #endif
 #else
-#define DCP_CURRENT_UA			3300000
-#define HVDCP_CURRENT_UA		3300000
+#define DCP_CURRENT_UA			1500000
+#define HVDCP_CURRENT_UA		3000000
 #endif
 #define TYPEC_DEFAULT_CURRENT_UA	900000
 #define TYPEC_MEDIUM_CURRENT_UA		1500000
-#define TYPEC_HIGH_CURRENT_UA		3300000
+#define TYPEC_HIGH_CURRENT_UA		3000000
 static int get_rp_based_dcp_current(struct smb_charger *chg, int typec_mode)
 {
 	int rp_ua;
