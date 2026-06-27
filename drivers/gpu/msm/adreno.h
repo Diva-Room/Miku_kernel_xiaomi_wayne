@@ -475,6 +475,8 @@ enum gpu_coresight_sources {
  * @gpuhtw_llc_slice_enable: To enable the GPUHTW system cache slice or not
  * @zap_loaded: Used to track if zap was successfully loaded or not
  * @soc_hw_rev: Indicate which SOC hardware revision to use
+ * @perfcounter: Flag to keep performance counters enabled across context
+ * switches for debug reads
  */
 struct adreno_device {
 	struct kgsl_device dev;    /* Must be first field in this struct */
@@ -557,6 +559,7 @@ struct adreno_device {
 	bool gpuhtw_llc_slice_enable;
 	unsigned int zap_loaded;
 	unsigned int soc_hw_rev;
+	bool perfcounter;
 };
 
 /**
